@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>
+        {% if page.tag or page.title %}
+          {% if page.tag %}
+            {{ page.tag | escape }}
+          {% else %}
+            {{ page.title | escape }}
+          {% endif %}
+          -
+        {% endif %}
+        {% if paginator and paginator.page and paginator.total_pages > 1 and paginator.page > 1 %}
+          Page {{ paginator.page }} of {{ paginator.total_pages }} -
+        {% endif %}
+        {{ site.title | escape }}
+        {% unless page.tag or page.title %}
+          - {{ site.description | escape }}
+        {% endunless %}
+    </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="color-scheme" content="light dark">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/css/{{site.bootswatch_theme}}/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/vendor/prismjs/themes/prism-okaidia.css">
+</head>
+
+<body data-bs-theme="{{site.dark_mode}}">
+   {{content}}
+    <script src="/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/prismjs/prism.js" data-manual></script>
+</body>
+
+</html> 

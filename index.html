@@ -1,0 +1,87 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+---
+<div class="container col-xxl-8 px-4 py-3">
+    <div class="row  align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+            <img src="/assets/logo.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="300"
+                height="300" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+            <h1 class="display-5 fw-bold lh-1 mb-3">{{site.title}}</h1>
+            <p class="lead">{{site.description}}</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                {% if site.hb_first.visible %}
+                <a href="{{site.hb_first.url}}" target="_blank"
+                    class="btn btn-{{site.hb_first.bg}} btn-{{site.hb_first.size}} px-4 me-md-2"
+                    id="first">{{site.hb_first.title}}</a>
+                {% endif %}
+                {% if site.hb_second.visible %}
+                <a href="{{site.hb_second.url}}" target="_blank"
+                    class="btn btn-{{site.hb_second.bg}} btn-{{site.hb_second.size}} px-4"
+                    id="second">{{site.hb_second.title}}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row g-5">
+        <div class="col-md-8">
+            <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
+                {% for link in site.links %}
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-white bg-{{link.bg}} rounded-5 shadow-lg">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h2 class="pt-2 mt-2 mb-4 display-6 lh-1 fw-bold">{{link.title}}</h2>
+                            <p class="lead fs-6">{{link.description}}</p>
+                            <ul class="d-flex list-unstyled justify-content-between mt-auto">
+
+                                <li class="d-flex align-items-center me-3">
+                                    <small>{{link.category}}</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <svg class="bi me-2" width="1em" height="1em">
+                                        <use xlink:href="#calendar3"></use>
+                                    </svg>
+                                </li>
+                            </ul>
+                            <a href="{{link.url}}" target="_blank" class="stretched-link"></a>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="position-sticky" style="top: 2rem;">
+                <div class="mb-3">
+                    {% for social in site.socials %}
+                    <a href="{{social.url}}"><i class="{{social.icon}} me-2"></i></a>
+                    {% endfor %}
+                </div>
+                <br>
+
+                <br>
+                <h4>Knowlegde</h4>
+                <hr>
+                {% for knowledge in site.knowledges %}
+                <h5 id="progress-animated">{{knowledge.title}}</h5>
+                <div class="bs-component">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-{{knowledge.bg}}"
+                            role="progressbar" aria-valuenow="{{knowledge.level}}" aria-valuemin="0" aria-valuemax="100"
+                            style="width: {{knowledge.level}}%;"></div>
+                    </div>
+                </div>
+                {% endfor %}
+                <br>
+
+            </div>
+        </div>
+    </div>

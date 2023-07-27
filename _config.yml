@@ -1,0 +1,113 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Your awesome title
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+bootswatch_theme: vapor
+dark_mode: light
+
+
+# Social Media settings
+socials:
+  - title: Twitter
+    url: https://twitter.com/jekyllrb
+    icon: bi bi-twitter
+  - title: GitHub
+    url:
+    icon: bi bi-github
+  - title: Email
+    url: mailto:me@fatihzor.dev
+    icon: bi bi-envelope
+  
+knowledges:
+  - title: Python
+    level: 80
+    bg: success 
+  - title: C++
+    level: 70
+    bg: info
+  - title: C
+    level: 60
+    bg: warning
+  - title: Java
+    level: 50
+    bg: danger
+
+links:
+  - title: Lorem
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt, risus ac lobortis fermentum, mi tellus consequat erat, nec auctor enim felis a ligula.
+    category: Blog Post
+    url: #
+    bg: secondary
+  - title: Simply Dummy
+    description: Duis pulvinar sem at faucibus porttitor. Nunc ac lobortis nulla. Sed vel neque vitae ante accumsan dapibus. Donec luctus eu nunc non vestibulum. 
+    category: Website
+    url: #
+    bg: success
+  - title: Project One
+    description: Cras scelerisque vulputate massa, tempor blandit ante finibus eget. Cras rhoncus imperdiet diam id mattis. Integer ac ex nec nisi condimentum vulputate.
+    category: Project
+    url: #
+    bg: warning
+
+# hb: hero button
+hb_first:
+  visible: true
+  title: Get Started
+  url: #
+  bg: outline-success
+  size: lg
+
+hb_second:
+  visible: true
+  title: Learn More
+  url: #
+  bg: outline-secondary
+  size: sm
+
+
+# Build settings
+# theme: minima
+plugins:
+  - jekyll-feed
+
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+exclude:
+  - .jekyll-cache
+  - .obsidian
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+  - CONTRIBUTING.md
+  
+
