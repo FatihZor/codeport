@@ -87,7 +87,7 @@ hb_second:
   title: Learn More
   url: #
   bg: outline-secondary
-  size: sm
+  size: lg
 
 
 # Build settings
